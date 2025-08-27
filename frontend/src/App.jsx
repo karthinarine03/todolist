@@ -57,11 +57,11 @@ function adddata(){
  
 
   return (
-    <div className='container min-h-screen w-full bg-no-repeat bg-cover  mx-auto text-white font-extrabold' style={{ backgroundImage: `url(${image})` }}>
+    <div className=' min-h-screen w-full bg-no-repeat bg-cover bg-gradient-to-tr to-red-600 from-blue-700  mx-auto text-white font-extrabold' >
         <div className='mb-3 font-mono p-5'>
           <motion.h1 initial={{opacity:0,x:90}} animate={{opacity:1,x:0}} transition={{duration:0.7,type:"spring"}} className='text-center text-4xl font-bold'>Todo list</motion.h1>
           <div className='flex justify-center items-center m-2'>
-              <input type="text" className='outline-none border-none bg-amber-50 text-gray-600 m-3 p-3 rounded-2xl w-96' value={task} onChange={(e)=>settask(e.target.value)}/>
+              <input type="text" className='outline-none border-none bg-white/30 backdrop-blur-xl text-gray-600 m-3 p-3 rounded-2xl w-96' value={task} onChange={(e)=>settask(e.target.value)}/>
               <motion.button whileTap={{scale:0.9}} whileHover={{scale:1.1}} className='bg-gradient-to-r from-cyan-500 to-cyan-700 p-3 px-2 rounded' onClick={adddata}>Add</motion.button>
           </div>
         </div>
@@ -70,7 +70,7 @@ function adddata(){
             {
               data.map((data,index)=>(
                 <div className='flex m-3 text-white font-bold justify-center items-center'>{
-                    id!=data._id ?<motion.li initial={{opacity:0,y:90}} animate={{opacity:1,y:0}} transition={{duration:0.9}} key={index} className='border-0 bg-cyan-100 rounded-4xl text-black rounded-r font-mono py-4  px-5 w-96 overflow-hidden'>{data.task}</motion.li>:
+                    id!=data._id ?<motion.li initial={{opacity:0,y:90}} animate={{opacity:1,y:0}} transition={{duration:0.9}} key={index} className='border-0 bg-white/50 backdrop-blur-2xl rounded-4xl text-black rounded-r font-mono py-4  px-5 w-96 overflow-hidden'>{data.task}</motion.li>:
                 <input autoFocus value={update} onChange={(e)=>{setupdate(e.target.value)}} className='outline-none border-none bg-cyan-100 rounded-4xl text-black rounded-r font-mono py-4  px-5 w-96 overflow-hidden'></input>
                 }
                 <motion.button whileHover={{scale:1.1}} whileTap={{scale:0.9}} initial={{opacity:0,x:-90}} animate={{opacity:1,x:0}}   className='bg-gradient-to-r from-red-500 to-red-900  p-3 px-2 rounded m-3' onClick={()=>{deletetask(data._id)}}>delete</motion.button>
