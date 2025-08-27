@@ -13,7 +13,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/todolist",{
 .then(()=>{console.log("mongodb conected");
 })
 .catch((err)=>{
-    console.err(err);
+    console.error(err);
     
 })
 app.use("/api/v1",listrouter);
